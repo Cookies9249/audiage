@@ -60,7 +60,7 @@ export default function HomePage() {
             { features.map(item => (
                 <WrapItem key={item.title}>
                     <Flex direction='column' color='white' justify='center' align='center' p={8}>
-                        <Flex width='280px' height='280px' bg='red.200'>
+                        <Flex width='280px' height='280px' bg='red.200'>Image
                         </Flex>
 
                         <Flex direction='column' width='280px' mt={6}>
