@@ -13,16 +13,22 @@ const AuthButtons:React.FC = () => {
 
     return (
         <Stack spacing={4} direction='row'>
-            <Button colorScheme='blue' onClick={() => router.push('/upload')}>
+            <Button colorScheme='blue' onClick={() => router.push('/upload')}
+                display={{ base: 'none', sm: 'none', md: 'unset' }}
+            >
                 <SmallAddIcon fontSize='18pt'/>
                 Upload
             </Button>
 
-            <Button variant='solid_brand' onClick={() => setModalState({ open: true, view: 'login' })}>
+            <Button variant='solid_brand' onClick={() => setModalState({ open: true, view: 'login' })}
+                display={{ base: 'none', sm: 'none', md: 'unset' }}
+            >
                 Log In
             </Button>
             
-            <Button variant='outline_brand' onClick={() => setModalState({ open: true, view: 'signup' })}>
+            <Button variant='outline_brand' onClick={() => setModalState({ open: true, view: 'signup' })}
+                display={{ base: 'none', sm: 'none', md: 'unset' }}
+            >
                 Sign Up
             </Button>
             

@@ -8,19 +8,19 @@ const SignUp:React.FC = () => {
     
     return (<>
 
-        <Input required name='email' placeholder='Email' type='email'
+        <Input name='email' placeholder='Email' type='email'
             mb={2} fontSize='10pt'
             _placeholder={{ color: 'gray.500' }}
             _hover={{ border: '2px solid', borderColor: 'brand.100' }}
             _focus={{ outline: 'none', border: '2px solid', borderColor: 'brand.100' }}
         />
-        <Input required name='password' placeholder='Password' type='password'
+        <Input name='password' placeholder='Password' type='password'
             mb={2} fontSize='10pt'
             _placeholder={{ color: 'gray.500' }}
             _hover={{ border: '2px solid', borderColor: 'brand.100' }}
             _focus={{ outline: 'none', border: '2px solid', borderColor: 'brand.100' }}
         />
-        <Input required name='confirm' placeholder='Confirm Password' type='confirm'
+        <Input name='confirm' placeholder='Confirm Password' type='confirm'
             mb={2} fontSize='10pt'
             _placeholder={{ color: 'gray.500' }}
             _hover={{ border: '2px solid', borderColor: 'brand.100' }}
@@ -34,6 +34,7 @@ const SignUp:React.FC = () => {
         </Button>
 
         <Flex fontSize='9pt' justifyContent='center'>
+            <Text mr={1}>Have an account?</Text>
             <Text color='blue.500' fontWeight='700' cursor='pointer' onClick={() => setModalState(
                 prev => ({
                     ...prev,

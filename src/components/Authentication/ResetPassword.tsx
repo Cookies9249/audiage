@@ -14,7 +14,7 @@ const ResetPassword: React.FC = () => {
             </Text>
 
 
-            <Input required name='email' placeholder='Email' type='email'
+            <Input name='email' placeholder='Email' type='email'
                 mb={2} fontSize='10pt'
                 _placeholder={{ color: 'gray.500' }}
                 _hover={{ border: '2px solid', borderColor: 'brand.100' }}
@@ -39,7 +39,7 @@ const ResetPassword: React.FC = () => {
             </Flex>
 
             <Flex fontSize='9pt' justifyContent='center'>
-                <Text mr={1}>Don&apos;t have an account?</Text>
+                <Text mr={1}>Create a new account?</Text>
                 <Text color='blue.500' fontWeight='700' cursor='pointer' onClick={() => setModalState(
                     prev => ({
                         ...prev,

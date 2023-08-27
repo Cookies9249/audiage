@@ -2,8 +2,14 @@ import { HamburgerIcon, AddIcon, ExternalLinkIcon, RepeatIcon, EditIcon, PlusSqu
 import { Menu, MenuButton, IconButton, MenuList, MenuItem, Icon, MenuGroup, MenuDivider } from '@chakra-ui/react';
 import { VscAccount } from 'react-icons/vsc'
 import React from 'react';
+import { useRouter } from 'next/navigation';
+import { useSetRecoilState } from 'recoil';
+import { authModalState } from '@/src/atoms/authModalState';
 
 const NavbarMenu:React.FC = () => {
+
+    const router = useRouter();
+    const setModalState = useSetRecoilState(authModalState);
     
     return (
         <Menu>
@@ -24,17 +30,20 @@ const NavbarMenu:React.FC = () => {
 
                 <MenuDivider/>
 
-                <MenuItem icon={<ViewIcon/>}>
+                {/* <MenuItem icon={<ViewIcon/>}>
                     Audio History
-                </MenuItem>
-                <MenuItem icon={<PlusSquareIcon/>}>
+                </MenuItem> */}
+                <MenuItem icon={<PlusSquareIcon/>} onClick={() => router.push('/upload')}>
                     New Audio
                 </MenuItem>
 
                 <MenuDivider/>
 
-                <MenuItem icon={<VscAccount/>}>
-                    Sign Up / Log In
+                <MenuItem icon={<VscAccount/>} onClick={() => setModalState(prev => ({ open: true, view: 'signup' }))}>
+                    Sign Up
+                </MenuItem>
+                <MenuItem icon={<VscAccount/>} onClick={() => setModalState(prev => ({ open: true, view: 'login' }))}>
+                    Log In
                 </MenuItem>
             </MenuList>
         </Menu>

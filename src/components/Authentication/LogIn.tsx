@@ -8,13 +8,13 @@ const LogIn:React.FC = () => {
     
     return (<>
 
-        <Input required name='email' placeholder='Email' type='email'
+        <Input name='email' placeholder='Email' type='email'
             mb={2} fontSize='10pt'
             _placeholder={{ color: 'gray.500' }}
             _hover={{ border: '2px solid', borderColor: 'brand.100' }}
             _focus={{ outline: 'none', border: '2px solid', borderColor: 'brand.100' }}
         />
-        <Input required name='password' placeholder='Password' type='password'
+        <Input name='password' placeholder='Password' type='password'
             mb={2} fontSize='10pt'
             _placeholder={{ color: 'gray.500' }}
             _hover={{ border: '2px solid', borderColor: 'brand.100' }}

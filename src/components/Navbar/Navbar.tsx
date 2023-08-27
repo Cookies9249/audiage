@@ -15,14 +15,16 @@ const Navbar: React.FC = () => {
             <Flex justify='space-between' width='90%'>
 
                 <>
-                    <Flex color='brand.100' cursor='pointer' mt='5px' onClick={() => router.push('/')}>
+                    <Flex color='brand.100' cursor='pointer' mt='5px' mr={6} minWidth='220px' justify='center' onClick={() => router.push('/')}>
                         <Image src='/images/audiage.png'/>
                     </Flex>
 
-                    <Stack spacing={10} direction='row' align='center' justify='center' border='1px' borderColor='gray.300' borderRadius='15px' p='0px 12px' mt={2} height='42px'>
+                    <Stack spacing={5} direction='row' align='center' justify='center'
+                        border='1px' borderColor='gray.300' borderRadius='15px' p='0px 12px' mt={2} height='42px'
+                        display={{ base: 'none', md: 'none', lg: 'none', xl: 'unset' }}
+                    >
                         <Button variant='ghost' fontWeight={400} onClick={() => router.push('/')}>Home</Button>
-                        <Button variant='ghost' fontWeight={400} onClick={() => router.push('/upload')}>Start</Button>
-                        <Button variant='ghost' fontWeight={400}>Help</Button>
+                        <Button variant='ghost' fontWeight={400} onClick={() => router.push('/#About')}>About</Button>
                         <Button variant='ghost' fontWeight={400}>Contact</Button>
                     </Stack>
                 </>
