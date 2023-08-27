@@ -39,7 +39,7 @@ const LogIn:React.FC = () => {
         </Flex>
 
         <Flex fontSize='9pt' justifyContent='center'>
-            <Text mr={1}>Don't have an account?</Text>
+            <Text mr={1}>Don&apos;t have an account?</Text>
             <Text color='blue.500' fontWeight='700' cursor='pointer' onClick={() => setModalState(
                 prev => ({
                     ...prev,
