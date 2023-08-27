@@ -18,7 +18,7 @@ export default function HomePage() {
   return (<>
     <Flex justify='center' padding='16px 0px'>
  
-          <Flex p='12px' width='95%' maxWidth='1200px' mt='60px' mb='100px' justify='space-between' direction='row'>
+          <Flex p='12px' width='95%' maxWidth='1200px' mt='60px' mb='110px' justify='space-between' direction='row'>
             
             <Flex width='41%' direction='column'>
               <Text fontSize='36pt' fontWeight='700' mb={4}>
@@ -40,15 +40,14 @@ export default function HomePage() {
                 </Button>
               </Stack>
             </Flex>
-            <Flex width='50%' direction='column' border='1px solid black' borderRadius='50px' m='20px 0px' bg='red.100'>
-                Image
+            <Flex width='50%' direction='column' borderRadius='50px' m='10px 0px' bg='brand.400'>
             </Flex>
         </Flex>
 
     </Flex>
 
 
-    <Flex justify='center' align='center' padding='16px 0px' bg='red.300' color='white'>
+    <Flex justify='center' align='center' padding='16px 0px' bg='brand.200' color='white'>
  
         <Flex p='12px' width='95%' maxWidth='1200px' mt='60px' mb='100px' justify='center' align='center' direction='column'>
 
@@ -60,7 +59,7 @@ export default function HomePage() {
             { features.map(item => (
                 <WrapItem key={item.title}>
                     <Flex direction='column' color='white' justify='center' align='center' p={8}>
-                        <Flex width='280px' height='280px' bg='red.200'>Image
+                        <Flex width='280px' height='280px' bg='brand.300' borderRadius='12px'>
                         </Flex>
 
                         <Flex direction='column' width='280px' mt={6}>
@@ -81,11 +80,11 @@ export default function HomePage() {
             </Text>
 
             <Stack spacing={4} direction='row' pt={6}>
-                <Button variant='solid_brand' width='180px' height='42px' onClick={() => router.push('/upload')}>
+                <Button variant='outline_white' width='180px' height='42px' onClick={() => router.push('/upload')}>
                   Try it now
                   <ChevronRightIcon fontSize='16pt' ml={1}/>
                 </Button>
-                <Button variant='solid_brand' width='180px' height='42px' onClick={() => router.push('/about')}>
+                <Button variant='outline_white' width='180px' height='42px' onClick={() => router.push('/about')}>
                   <ExternalLinkIcon fontSize='14pt' mr={2}/>
                   Learn more
                 </Button>
@@ -104,55 +103,7 @@ export default function HomePage() {
         
         */}
 
-<Flex justify='center' align='center' padding='16px 0px' bg='red.300' color='white'>
- 
- <Flex p='12px' width='95%' maxWidth='1200px' mt='60px' mb='100px' justify='center' align='center' direction='column'>
-
-     <Text fontSize='33pt' fontWeight='700' mt={12} mb={10}>
-        Features and Capabilities
-     </Text>
-
-     <Wrap justify='center'>
-     { features.map(item => (
-         <WrapItem key={item.title}>
-             <Flex direction='column' color='white' justify='center' align='center' p={8}>
-                 <Flex width='280px' height='280px' bg='red.200'>
-                 </Flex>
-
-                 <Flex direction='column' width='280px' mt={6}>
-                     <Text fontSize='14pt' fontWeight='700' mb={4}>
-                         {item.title}
-                     </Text>
-                     <Text fontSize='12pt' fontWeight='400'>
-                         {item.body}
-                     </Text>
-                 </Flex>
-             </Flex>
-         </WrapItem>
-     ))}
-     </Wrap>
-
-     <Text fontSize='22pt' fontWeight='700' mt={12}>
-        Get Audiage for Free Today.
-     </Text>
-
-     <Stack spacing={4} direction='row' pt={6}>
-         <Button variant='solid_brand' width='180px' height='42px' onClick={() => router.push('/upload')}>
-           Try it now
-           <ChevronRightIcon fontSize='16pt' ml={1}/>
-         </Button>
-         <Button variant='solid_brand' width='180px' height='42px' onClick={() => router.push('/about')}>
-           <ExternalLinkIcon fontSize='14pt' mr={2}/>
-           Learn more
-         </Button>
-     </Stack>
-     
-
- </Flex>
-</Flex>
-
-
-    <Flex direction='column' align='center' justify='center' padding='16px 0px' bg='red.300'>
+    <Flex direction='column' align='center' justify='center' padding='16px 0px' bg='brand.100' color='white'>
         <Stack spacing={10} direction='row'>
             <Text>Audiage</Text>
             <Text>Terms and Conditions</Text>

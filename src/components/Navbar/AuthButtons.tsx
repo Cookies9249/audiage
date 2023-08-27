@@ -13,7 +13,7 @@ const AuthButtons:React.FC = () => {
 
     return (
         <Stack spacing={4} direction='row'>
-            <Button colorScheme='blue'  onClick={() => router.push('/upload')}>
+            <Button colorScheme='blue' onClick={() => router.push('/upload')}>
                 <SmallAddIcon fontSize='18pt'/>
                 Upload
             </Button>

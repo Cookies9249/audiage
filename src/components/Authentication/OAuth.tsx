@@ -15,14 +15,11 @@ const OAuth:React.FC = () => {
             </Button>
 
             {/* Other Method Sign In */}
-            <Button variant='solid_white' onClick={() => setModalState(prev => ({
-                ...prev,
-                open: false,
-            }))}>
+            <Button variant='solid_white'>
                 Another Provider
             </Button>
         </Flex>
-        <Text color='gray.500' fontWeight='700'>OR</Text>
+        <Text color='gray.500' fontWeight='700' mb={2}>OR</Text>
         </>
     )
 }

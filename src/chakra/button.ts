@@ -12,25 +12,34 @@ export const Button: ComponentStyleConfig = {
     solid_brand: {
       color: "white",
       bg: "brand.100",
-      _hover: { bg: "brand.100" },
+      _hover: { color: 'brand.500' },
     },
     outline_brand: {
       color: "brand.100",
-      border: "1px solid",
+      border: "2px solid",
       borderColor: "brand.100",
+      _hover: { bg: 'brand.500' }
+    },
+    outline_white: {
+      color: "white",
+      border: "2px solid",
+      borderColor: "white",
+      _hover: { bg: '#aa8de6' }
     },
     outline_black: {
       width: "80px",
       color: "gray.600",
-      border: "1px solid",
+      border: "2px solid",
       borderColor: "gray.700",
+      _hover: { bg: 'gray.100' },
     },
     solid_white: {
-      height: "34px",
-      border: "1px solid",
+      height: "36px",
+      border: "2px solid",
       borderColor: "gray.300",
+      width: '100%',
       _hover: {
-        bg: "gray.50",
+        border: '2px solid', borderColor: 'brand.100',
       },
     },
   },

@@ -9,23 +9,22 @@ import LogIn from './LogIn';
 import SignUp from './SignUp';
 
 const AuthModal:React.FC = () => {
-  const [modalState, setModalState] = useRecoilState(authModalState);
+    const [modalState, setModalState] = useRecoilState(authModalState);
 
-  // Close modal
-  const handleClose = () => {
-    setModalState((prev) => ({
-        ...prev,
-        open: false,
-    }))
-  }
+    // Close modal
+    const handleClose = () => {
+        setModalState((prev) => ({
+            ...prev,
+            open: false,
+        }))
+    }
   
-  return (
+    return (
     <>
-    {/* modalState controls the state of modal */}
       <Modal isOpen={modalState.open} onClose={handleClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader textAlign='center'>
+          <ModalHeader textAlign='center' mt={4}>
 
             {modalState.view === 'login' && 'Log In'}
             {modalState.view === 'signup' && 'Sign Up'}
@@ -48,18 +47,12 @@ const AuthModal:React.FC = () => {
                   <ResetPassword/>
                 </>}
 
-                {/* {(modalState.view === 'login' || modalState.view === 'signup') ? (
-                
-                    <OAuth/>
-
-
-                ) : <ResetPassword/>} */}
-
             </Flex>
           </ModalBody>
         </ModalContent>
       </Modal>
+        
     </>
-  )
-}
+    );
+};
 export default AuthModal;
