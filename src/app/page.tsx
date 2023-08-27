@@ -1,16 +1,19 @@
 'use client'
 
 import { ChevronRightIcon, ExternalLinkIcon } from "@chakra-ui/icons"
-import { Button, Flex, Stack, Text, Wrap, WrapItem } from "@chakra-ui/react"
+import { Button, Flex, Icon, Image, Stack, Text, Wrap, WrapItem } from "@chakra-ui/react"
 import { useRouter } from "next/navigation";
 import BottomBar from "../components/Navbar/BottomBar";
+import { BsFillMicFill, BsFillPhoneFill } from "react-icons/bs";
+import { AiFillClockCircle } from 'react-icons/ai'
+import { FaFilter, FaSave } from "react-icons/fa";
 
 const features = [
-  { 'title': 'Enhance recordings for clarity.', 'body': 'Audiage gives you the tools that you need to improve audio recordings with a simple and easy-to-use interface.' },
-  { 'title': 'Filter frequencies to lower hearing damage.', 'body': 'Filtering audio with Audiage allows you to remove high frequencies that can harm your hearing.' },
-  { 'title': 'Convenient and flexible access.', 'body': 'Access Audiage through the Internet on a phone, tablet, laptop, or computer. The app even offers a downloadable version  for easy offline access.' },
-  { 'title': 'Get results in seconds.', 'body': 'Audiage is app that can be used anytime. Customize your audio configuration settings, upload your audio file, and instantly access the final result.' },
-  { 'title': 'Save and reaccess your data.', 'body': 'Save your uploaded and refined audio files and access them through an account. Audiage uses a secure infrastructure to keep your data safe.'},
+  { 'title': 'Enhance recordings for clarity.', 'body': 'Audiage gives you the tools that you need to improve audio recordings with a simple and easy-to-use interface.', icon: BsFillMicFill },
+  { 'title': 'Filter frequencies to lower hearing damage.', 'body': 'Filtering audio with Audiage allows you to remove high frequencies that can harm your hearing.', icon: FaFilter },
+  { 'title': 'Convenient and flexible access.', 'body': 'Access Audiage through Internet on a phone, tablet, laptop, or computer. The app even offers a downloadable version for easy offline access.', icon: BsFillPhoneFill },
+  { 'title': 'Get results in seconds.', 'body': 'Customize your audio configuration settings, upload your audio file, and instantly access the final result.', icon: AiFillClockCircle },
+  { 'title': 'Save and reaccess your data.', 'body': 'Save your uploaded and refined audio files. Audiage uses a secure infrastructure to keep your data safe.', icon: FaSave},
 ]
 
 export default function HomePage() {
@@ -41,7 +44,9 @@ export default function HomePage() {
                     </Button>
                 </Stack>
             </Flex>
-                <Flex width='50%' direction='column' borderRadius='50px' mt='12px' bg='brand.400'>
+            
+            <Flex width='50%' direction='column' borderRadius='50px' mt='12px' bg='brand.400' p={4}>
+                <Image src='/images/stockphoto.jpeg' borderRadius='50px'/>
             </Flex>
         </Flex>
 
@@ -60,7 +65,8 @@ export default function HomePage() {
             { features.map(item => (
                 <WrapItem key={item.title}>
                     <Flex direction='column' color='white' justify='center' align='center' p='16px 30px'>
-                        <Flex width='292px' height='292px' bg='brand.300' borderRadius='12px'>
+                        <Flex width='80px' height='80px' bg='brand.300' borderRadius='12px' justify='center' align='center'>
+                            <Icon as={item.icon} color='white' fontSize='26pt'/>
                         </Flex>
 
                         <Flex direction='column' width='292px' mt={6}>

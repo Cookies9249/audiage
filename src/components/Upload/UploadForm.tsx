@@ -15,6 +15,7 @@ const UploadForm:React.FC = () => {
         min: '',
         max: '',
     });
+    const [error, setError] = useState<string>();
 
     // Uploading audio files
     const selectedFileRef = useRef<HTMLInputElement>(null);
@@ -39,7 +40,15 @@ const UploadForm:React.FC = () => {
     }
 
     const onDownloadFile = () => {
-        //
+        
+        if (selectedMode == 'manual') {
+            
+            if (selectedRange.min as unknown as number <= 0) {
+                setError('Please enter a minimum frequency value greater than 0');
+            }
+
+        }
+
     }
 
     // Change text inputs
@@ -63,7 +72,6 @@ const UploadForm:React.FC = () => {
     }, [selectedFileData]);
 
     return (<>
-        <Button onClick={onDownloadFile}>Test</Button>
         <Flex direction='column' borderRadius='4' mt='2' width='80%'>
 
             {/* Step 1 */}
@@ -124,6 +132,7 @@ const UploadForm:React.FC = () => {
                             _focus={{ outline: 'none', border: '2px solid', borderColor: 'brand.100' }}
                             onChange={onTextChange}
                         />
+                        {/* change to number input */}
                         <Text mt='6px' mr={2} ml={2} width='8%'>Hz to</Text>
 
                         <Input width='18%' name='max'
@@ -164,7 +173,9 @@ const UploadForm:React.FC = () => {
                             <Icon as={BsFiletypeWav} color='brand.100' fontSize='48pt' mb={4} mt='10px'/>
                         </Flex>
 
-                        <Button variant='solid_brand' height='28px' mb='10px' onClick={() => selectedFileRef.current?.click()}>
+                        <Button variant='solid_brand' height='28px' mb='10px' onClick={() => selectedFileRef.current?.click()}
+                            isDisabled={(selectedMode == 'automatic' && !selectedAge) || (selectedMode == 'manual' && (!selectedRange.min || !selectedRange.max))}
+                        >
                             Upload
                         </Button>
                         <input id='song' ref={selectedFileRef} type='file' accept='.mp3,.wav' hidden onChange={onUploadFile}/>
@@ -181,11 +192,21 @@ const UploadForm:React.FC = () => {
                 <Text fontSize='16pt'>Enhance my Audio!</Text>
             </Stack>
 
-
             <Flex justify='center' mt={6}>
-                <Button variant='solid_brand' width='90%' height='36px' mt={2} mb={4} type='submit'>
-                    Download
-                </Button>
+                <Flex width='84%' direction='column'>
+                    <Button variant='solid_brand' width='100%' height='36px' mt={2} mb={4} type='submit' isDisabled={!selectedFileData}
+                        onClick={onDownloadFile}
+                    >
+                        Download
+                    </Button>
+
+                    { error && (
+                        <Alert status='warning' borderRadius='10px'>
+                            <AlertIcon />
+                            {error}
+                        </Alert>
+                    )}
+                </Flex>
             </Flex>
             
         </Flex>
