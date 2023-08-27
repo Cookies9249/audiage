@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import fetch from 'node-fetch';
 import useDolbyAPI from '@/src/hooks/useDolbyAPI';
 import { Bs1Circle, Bs2Circle, Bs3Circle, Bs4Circle, BsFiletypeMp3, BsFiletypeWav } from 'react-icons/bs';
+import { useRouter } from 'next/navigation';
 
 const formTabs = ['Option 1', 'Option 2', 'Option 3']
 
@@ -16,11 +17,14 @@ const UploadForm:React.FC = () => {
         max: '',
     });
     const [error, setError] = useState<string>();
+    const [loading, setLoading] = useState(false);
 
     // Uploading audio files
     const selectedFileRef = useRef<HTMLInputElement>(null);
     const [selectedFileName, setSelectedFileName] = useState<string>();
     const [selectedFileData, setSelectedFileData] = useState<string>();
+
+    const router = useRouter();
 
     // On upload, store name and data
     const onUploadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,15 +43,25 @@ const UploadForm:React.FC = () => {
         }
     }
 
-    const onDownloadFile = () => {
+    const onDownloadFile = async () => {
+        console.log('download')
         
         if (selectedMode == 'manual') {
             
             if (selectedRange.min as unknown as number <= 0) {
                 setError('Please enter a minimum frequency value greater than 0');
+                return;
             }
-
         }
+
+        // Download
+        console.log('Start')
+        setLoading(true);
+        const download = (ms: any) => new Promise(res => setTimeout(res, ms));
+        await download(3000);
+        router.push('/')
+        console.log('End')
+        setLoading(false);
 
     }
 
@@ -66,10 +80,6 @@ const UploadForm:React.FC = () => {
             setSelectedFileData('');
         }
     }
-
-    useEffect(() => {
-        console.log(selectedFileData);
-    }, [selectedFileData]);
 
     return (<>
         <Flex direction='column' borderRadius='4' mt='2' width='80%'>
@@ -195,7 +205,7 @@ const UploadForm:React.FC = () => {
             <Flex justify='center' mt={6}>
                 <Flex width='84%' direction='column'>
                     <Button variant='solid_brand' width='100%' height='36px' mt={2} mb={4} type='submit' isDisabled={!selectedFileData}
-                        onClick={onDownloadFile}
+                        onClick={onDownloadFile} isLoading={loading}
                     >
                         Download
                     </Button>
