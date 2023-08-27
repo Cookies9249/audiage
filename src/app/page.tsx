@@ -38,9 +38,9 @@ export default function HomePage() {
                         Try it now
                         <ChevronRightIcon fontSize='16pt' ml={1}/>
                     </Button>
-                    <Button variant='solid_brand' width='180px' height='42px' onClick={() => router.push('/')}>
+                    <Button variant='solid_brand' width='180px' height='42px' onClick={() => router.push('https://drive.google.com/file/d/1a9GZZeIdh8eszFKOUxsjiIrYg4L6mC8a/view')}>
                         <ExternalLinkIcon fontSize='14pt' mr={2}/>
-                        Download
+                        Learn More
                     </Button>
                 </Stack>
             </Flex>
@@ -91,9 +91,9 @@ export default function HomePage() {
                     Try it now
                     <ChevronRightIcon fontSize='16pt' ml={1}/>
                 </Button>
-                <Button variant='outline_white' width='180px' height='42px' onClick={() => router.push('/')}>
+                <Button variant='outline_white' width='180px' height='42px' onClick={() => router.push('https://drive.google.com/file/d/1a9GZZeIdh8eszFKOUxsjiIrYg4L6mC8a/view')}>
                     <ExternalLinkIcon fontSize='14pt' mr={2}/>
-                    Download
+                    Learn More
                 </Button>
             </Stack>
             

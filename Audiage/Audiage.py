@@ -93,7 +93,6 @@ def fileNotConvertedError():
 
 def buttonPlayFunction():
     global audiofile
-    duration = int(audioread.audio_open(filedir.get()).duration)
     sd.play(audiofile[1], audiofile[0])
     time.sleep(duration)
     sd.stop()
@@ -164,7 +163,7 @@ def printText(strOutput, textBox):
 # Initializing Widgets
 #labelTitle = Label(userWindow, text="Audiage - Frequency Balancer") delete
 textboxLogo = Text(userWindow, height = 6, width = 50)
-image = PhotoImage(file="audiagelogo.png")
+image = PhotoImage(file="Audiage/audiagelogo.png")
 textboxLogo.image_create(END, image=image)
 
 productGroup = LabelFrame(userWindow, text = "View Product")
@@ -204,7 +203,7 @@ textboxLogo.config(state="disabled")
 groupOne.set(1)
 
 # Icon
-icon = PhotoImage(file="icon.png")
+icon = PhotoImage(file="Audiage/icon.png")
 userWindow.iconphoto(True,icon)
 
 # =====================================================================================
